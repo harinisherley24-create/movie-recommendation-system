@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineMatch | Discover Your Next Favourite</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- HEADER -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">🎬</span>
+            Cine<span>Match</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#recommend">Discover</a>
+            <a href="#favorites">My Favorites</a>
+        </nav>
+
+        <a href="#recommend" class="nav-button">Explore Movies ↗</a>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                ✦ YOUR PERSONAL MOVIE UNIVERSE
+            </span>
+
+            <h1>
+                Every Movie Has a Story.
+                <span>Find Yours.</span>
+            </h1>
+
+            <p>
+                Discover extraordinary movies that match your mood,
+                explore different genres and find your next favourite film.
+            </p>
+
+            <a href="#recommend" class="explore-btn">
+                Explore Movies <span>→</span>
+            </a>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>9+</strong>
+                    <span>Movies to explore</span>
+                </div>
+
+                <div>
+                    <strong>6</strong>
+                    <span>Genres</span>
+                </div>
+
+                <div>
+                    <strong>∞</strong>
+                    <span>Stories to discover</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-poster poster-back">
+                <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Interstellar">
+            </div>
+
+            <div class="hero-poster poster-front">
+                <img src="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg" alt="Inception">
+            </div>
+
+            <div class="floating-note">
+                <span>✦</span>
+                Your next favourite awaits
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <main id="recommend">
+
+        <section class="discover-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">EXPLORE YOUR TASTE</span>
+                    <h2>Discover Movies</h2>
+                    <p>Find the perfect movie for your next movie night.</p>
+                </div>
+            </div>
+
+
+            <!-- SEARCH AND FILTERS -->
+            <div class="filter-panel">
+
+                <div class="search-box">
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Search for a movie..."
+                    >
+                </div>
+
+                <select id="genre">
+                    <option value="All">All Genres</option>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Drama">Drama</option>
+                </select>
+
+                <select id="rating">
+                    <option value="0">Any Rating</option>
+                    <option value="7">7+ Rating</option>
+                    <option value="8">8+ Rating</option>
+                    <option value="9">9+ Rating</option>
+                </select>
+
+                <button id="filterBtn" class="filter-button">
+                    Find Movies ↗
+                </button>
+
+            </div>
+
+
+            <!-- RESULTS -->
+            <div class="results-heading">
+                <p id="resultCount">Showing movies</p>
+                <span>Curated for your taste ✦</span>
+            </div>
+
+            <div class="movie-container" id="movieContainer"></div>
+
+        </section>
+
+
+        <!-- FAVORITES SECTION -->
+        <section class="favorites-section" id="favorites">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">YOUR PERSONAL COLLECTION</span>
+                    <h2>❤️ My Favorites</h2>
+                    <p>All your saved movies in one place.</p>
+                </div>
+            </div>
+
+            <div class="movie-container" id="favoriteContainer"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <a href="#home" class="footer-logo">🎬 CineMatch</a>
+
+        <p>Made for movie lovers, one story at a time.</p>
+
+        <p class="copyright">
+            © 2026 CineMatch | Built with HTML, CSS & JavaScript
+        </p>
+
+    </footer>
+
+
+    <!-- MOVIE DETAILS MODAL -->
+    <div id="movieModal" class="movie-modal">
+
+        <div class="modal-content">
+
+            <button id="closeModal" class="close-btn" aria-label="Close">
+                &times;
+            </button>
+
+            <img id="modalPoster" src="" alt="Movie Poster">
+
+            <div class="modal-info">
+
+                <span class="section-label">MOVIE DETAILS</span>
+
+                <h2 id="modalTitle"></h2>
+
+                <p id="modalGenre"></p>
+
+                <p id="modalRating"></p>
+
+                <p id="modalDescription"></p>
+
+                <button id="modalFavorite" class="modal-favorite-btn">
+                    ♡ Add to Favorites
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
